@@ -1,29 +1,26 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { CssBaseline, Container } from '@mui/material';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import AboutMe from './components/AboutMe';
-import Portfolio from './components/Portfolio';
-import Contact from './components/Contact';
-import Resume from './components/Resume';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-const App = () => {
+import AboutMe from "./components/Pages/AboutMe";
+import Contact from "./components/Pages/Contact";
+import Portfolio from "./components/Pages/Portfolio";
+import CustomResume from "./components/Pages/Resume";
+
+import MainLayout from "./components/layout/Mainlayout";
+
+function App() {
   return (
     <Router>
-      <CssBaseline />
-      <Header />
-      <Container>
-        <Switch>
-          <Route exact path="/" component={AboutMe} />
-          <Route path="/portfolio" component={Portfolio} />
-          <Route path="/contact" component={Contact} />
-          <Route path="/resume" component={Resume} />
-        </Switch>
-      </Container>
-      <Footer />
+      <MainLayout>
+        <Routes>
+          <Route path="/about" element={<AboutMe />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/resume" element={<CustomResume />} />
+        </Routes>
+      </MainLayout>
     </Router>
   );
-};
+}
 
 export default App;

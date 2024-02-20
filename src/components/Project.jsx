@@ -1,29 +1,14 @@
-import React from 'react';
-import { Card, CardActionArea, CardContent, CardMedia, Typography, Link } from '@mui/material';
+import React from "react";
 
-const Project = ({ title, image, deployedLink, githubLink }) => {
+export default function Project({ application, id, image, title }) {
   return (
-    <Card>
-      <CardActionArea href={deployedLink} target="_blank" rel="noopener noreferrer">
-        <CardMedia
-          component="img"
-          height="140"
-          image={image}
-          alt={title}
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {title}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardContent>
-        <Link href={deployedLink} target="_blank" rel="noopener noreferrer">Deployed Application</Link>
-        <br />
-        <Link href={githubLink} target="_blank" rel="noopener noreferrer">GitHub Repository</Link>
-      </CardContent>
-    </Card>
+    <div className="custom-project">
+      <img src={image} alt={title} className="custom-project-img" key={id} />
+      <div className="custom-project-title">
+        <a href={application} target="_blank" rel="noopener noreferrer">
+          {title}
+        </a>
+      </div>
+    </div>
   );
-};
-
-export default Project;
+}
