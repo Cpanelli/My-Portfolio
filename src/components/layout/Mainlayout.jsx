@@ -12,10 +12,21 @@ export default function MainLayout() {
   return (
     <div className="main-layout">
       <header>
-      <div className="header-info">
-      <img src="imgs/Myself.jpeg" alt="Chris Panelli" className="profile-photo" />
-      </div>
+        <div className="header-info">
+          <img src="imgs/Myself.jpeg" alt="Chris Panelli" className="profile-photo" />
+          <h1 className="header-name">Chris Panelli</h1>
+        </div>
         <nav>
+          <button className="menu-button" onClick={toggleSidebar}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="28"
+              viewBox="0 -960 960 960"
+              width="28"
+            >
+              <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+            </svg>
+          </button>
           <div className={`sidebar ${sidebarVisible ? "visible" : ""}`}>
             <button className="exit-button" onClick={toggleSidebar}>
               <svg
@@ -27,76 +38,47 @@ export default function MainLayout() {
                 <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
               </svg>
             </button>
-            <NavLink className="side-button" onClick={toggleSidebar} to="About">
+            <NavLink className="side-button" onClick={toggleSidebar} to="/AboutMe">
               About
             </NavLink>
             <NavLink
               className="side-button"
               onClick={toggleSidebar}
-              to="Contact"
+              to="/Contact"
             >
               Contact
             </NavLink>
             <NavLink
               className="side-button"
               onClick={toggleSidebar}
-              to="Portfolio"
+              to="/Portfolio"
             >
               Portfolio
             </NavLink>
             <NavLink
               className="side-button"
               onClick={toggleSidebar}
-              to="Resume"
+              to="/Resume"
             >
               Resume
             </NavLink>
           </div>
-
-          <h1 className="header-name">Chris Panelli</h1>
-          <div className="main-nav">
-            <NavLink className="hideOnMobile" to="About">
-              About
-            </NavLink>
-            <NavLink className="hideOnMobile" to="Contact">
-              Contact
-            </NavLink>
-            <NavLink className="hideOnMobile" to="Portfolio">
-              Portfolio
-            </NavLink>
-            <NavLink className="hideOnMobile" to="Resume">
-              Resume
-            </NavLink>
-          </div>
-          <button className="menu-button" onClick={toggleSidebar}>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="28"
-              viewBox="0 -960 960 960"
-              width="28"
-            >
-              <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
-            </svg>
-          </button>
         </nav>
       </header>
-
       <main>
         <Outlet />
       </main>
-
       <footer>
         <nav>
           <div>
-            <a href="https://github.com/Cpanelli/My-Portfolio" target="_blank">
+            <a href="https://github.com/Cpanelli/My-Portfolio" target="_blank" rel="noopener noreferrer">
               <FaGithub className="footer-icon" />
             </a>
           </div>
-
           <div>
             <a
               href="https://www.linkedin.com/in/christopher-panelli-b05522242/"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
             >
               <FaLinkedin className="footer-icon" />
             </a>

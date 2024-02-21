@@ -1,8 +1,8 @@
 :root {
-  --primary: rgbargba(34, 140, 219);
-  --secondary: rgba(129, 132, 121);
-  --alternate: #f39c12;
-  --background: rgba(245, 241, 237);
+  --primary: #b23a48; /* Dark red */
+  --secondary: #818479; /* Dark gray */
+  --alternate: #f39c12; /* Orange */
+  --background: #f5f1ed; /* Light beige */
 }
 
 body {
@@ -12,9 +12,7 @@ body {
   line-height: 1.6;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
   color: var(--primary);
 }
 
@@ -22,20 +20,29 @@ p {
   margin: 15px 0;
 }
 
-.photo-profile {
-  border-radius: 50%;
-  width: 20px;
+.profile-photo {
+  width: 200px; 
+  height: 200px; 
+  border-radius: 50%; 
+  border: 2px solid #ffffff; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+  object-fit: cover; 
 }
 
 header nav {
-  background-color:var(--background);
+  background-color: var(--background);
   color: var(--primary);
   padding: 10px;
   box-shadow: 0 2px 4px rgba(23, 10, 28);
 }
 
 header nav a {
-  color: var(--background);
+  color: var(--primary);
+  margin-right: 20px; /* Add spacing between navigation links */
+}
+
+.main-nav a:last-child {
+  margin-right: 0; /* Remove margin from the last navigation link */
 }
 
 .sidebar {
@@ -44,6 +51,7 @@ header nav a {
 }
 
 button {
+  margin-bottom: 10px; /* Add margin below the button */
   background-color: var(--primary);
   color: var(--background);
   padding: 10px 20px;
@@ -61,16 +69,7 @@ button {
   width: 100%;
 }
 
-.submit-btn {
-  background-color: var(--primary);
-  color: var(--background);
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
-
-.download-btn {
+.submit-btn, .download-btn {
   background-color: var(--alternate);
   color: var(--background);
   border: none;
@@ -96,14 +95,9 @@ button {
 
 .project-container a:hover {
   opacity: 0.8;
-  font-display: relative;
 }
 
-.about h2 {
-  color: var(--primary);
-}
-
-.resume h3 {
+.about h2, .resume h3 {
   color: var(--primary);
   border-bottom: 1px solid var(--primary);
 }
