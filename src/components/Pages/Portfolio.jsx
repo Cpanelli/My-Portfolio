@@ -7,7 +7,7 @@ const projects = [
     id: 1,
     application: "https://cpanelli.github.io/PanelliWeather/",
     github: "https://github.com/cpanelli/PanelliWeather",
-    image: "/images/panelli_weather.jpg",
+    image: "/public/imgs/panelli_weather.jpg",
     title: "Panelli Weather",
   },
   {
